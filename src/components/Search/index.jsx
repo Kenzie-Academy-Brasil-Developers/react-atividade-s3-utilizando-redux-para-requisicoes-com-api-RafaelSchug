@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import addDigimonThunk from "../../store/modules/digimons/thunks";
 import { useState } from "react";
+import './style.css';
 
 const Search = () => {
 
@@ -8,15 +9,18 @@ const Search = () => {
     const [error, setError] = useState(false);
     const dispatch = useDispatch();
 
-    const handleSearch = () => {
+    const handleSearch = (event) => {
+        event.preventDefault();
         dispatch(addDigimonThunk(input, setError));
     }
 
     return (
-        <div>
-            <input type="text" onChange={event => setInput(event.target.value)} value={input} />
-            <button onClick={handleSearch} >Procurar</button>
-            {error && <p>Não foi possível encontrar o Digimon</p>}
+        <div className='search__container'>
+            <form onSubmit={handleSearch}>
+                <input type="text" onChange={event => setInput(event.target.value)} value={input} placeholder='Procurar Digimon' />
+                <button type='submit'>Procurar</button>
+            </form>
+            {error && <p>Nenhum Digimon encontrado</p>}
         </div>
     )
 }
