@@ -37,3 +37,11 @@
     border: none;
     font-weight: bold;
 }
+
+.search__container form button:hover {
+    background: #407fdf;
+}
+
+.search__container form button:active {
+    background: #2e6dca;
+}

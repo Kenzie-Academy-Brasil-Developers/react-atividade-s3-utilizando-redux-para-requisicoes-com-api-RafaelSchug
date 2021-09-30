@@ -1,6 +1,6 @@
-import { ADD_DIGIMONS } from "./actionTypes";
+import { ADD_DIGIMONS, LIST_DIGIMONS } from "./actionTypes";
 
-const digimonsReducer = (state = [], action) => {
+export const digimonsReducer = (state = [], action) => {
     switch (action.type) {
         case ADD_DIGIMONS: 
             const {digimon} = action;
@@ -10,4 +10,12 @@ const digimonsReducer = (state = [], action) => {
     }
 }
 
-export default digimonsReducer;
+export const digimonsListReducer = (state = [], action) => {
+    switch (action.type) {
+        case LIST_DIGIMONS:
+            const {digimons_list} = action;
+            return digimons_list;
+        default:
+            return state;
+    }
+}

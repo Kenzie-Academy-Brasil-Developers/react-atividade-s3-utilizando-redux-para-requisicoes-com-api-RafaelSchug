@@ -1,5 +1,6 @@
 import './App.css';
 import Digimon from './components/Digimon';
+import DigimonList from './components/DigimonList';
 import Search from './components/Search';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Search></Search>
       <Digimon></Digimon>
+      <DigimonList></DigimonList>
     </div>
   );
 }

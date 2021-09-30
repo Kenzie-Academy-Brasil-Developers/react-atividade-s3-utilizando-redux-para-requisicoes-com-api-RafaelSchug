@@ -1,0 +1,12 @@
+.digimons_list {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.digimons_list h3 {
+    font-family: sans-serif;
+}
+
+.digimons_list ul {
+    columns: 2;
+}

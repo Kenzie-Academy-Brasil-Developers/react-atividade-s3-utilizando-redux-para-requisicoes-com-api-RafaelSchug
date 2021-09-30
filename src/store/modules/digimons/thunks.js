@@ -1,4 +1,4 @@
-import { addDigimon } from "./actions";
+import { addDigimon, listDigimon } from "./actions";
 import api from "../../../services/api";
 
 const addDigimonThunk = (digimon, setError) => (dispatch) => {
@@ -13,5 +13,13 @@ const addDigimonThunk = (digimon, setError) => (dispatch) => {
         setError(true)
     })
 }
+
+export const listDigimonThunk = () => (dispatch) => {
+    api.get()
+    .then(response=>{
+        dispatch(listDigimon(response.data))
+    })
+}
+
 
 export default addDigimonThunk;
